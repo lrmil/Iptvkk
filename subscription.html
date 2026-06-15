@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Packages - StreamNet IPTV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col">
+
+    <nav class="bg-slate-900 border-b border-slate-800 px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-3">
+            <i class="fa-solid fa-tv text-purple-500 text-2xl"></i>
+            <span class="text-xl font-bold tracking-wider text-white">StreamNet<span class="text-purple-500">IPTV</span></span>
+        </a>
+        <a href="index.html" class="text-sm text-slate-400 hover:text-white flex items-center gap-2"><i class="fa-solid fa-arrow-left"></i> Return to Streams</a>
+    </nav>
+
+    <main class="flex-grow container mx-auto px-4 py-16 max-w-5xl">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-extrabold text-white">Choose Your Access Premium Package</h1>
+            <p class="text-slate-400 mt-2">Uninterrupted server infrastructure with secure regional gateway checkouts.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 relative flex flex-col justify-between hover:border-slate-700 transition">
+                <div>
+                    <h3 class="text-lg font-bold text-slate-300">Basic 1 Month</h3>
+                    <p class="text-xs text-slate-500 mt-1">Single connection login access</p>
+                    <div class="mt-4 mb-6">
+                        <span class="text-3xl font-extrabold text-white">150 ৳</span>
+                        <span class="text-slate-500 text-xs">/ month</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li><i class="fa-solid fa-circle-check text-purple-500 mr-2"></i> 4,000+ Channels</li>
+                        <li><i class="fa-solid fa-circle-check text-purple-500 mr-2"></i> SD/HD Quality Only</li>
+                        <li><i class="fa-solid fa-circle-xmark text-slate-600 mr-2"></i> No Multi-screen support</li>
+                    </ul>
+                </div>
+                <button onclick="selectPackage('Basic 1 Month', 150)" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3 rounded-xl mt-8 transition">Select Package</button>
+            </div>
+
+            <div class="bg-slate-900 border-2 border-purple-500 rounded-2xl p-6 relative flex flex-col justify-between shadow-xl shadow-purple-950/20">
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Most Popular</span>
+                <div>
+                    <h3 class="text-lg font-bold text-white">Standard 3 Months</h3>
+                    <p class="text-xs text-purple-400 mt-1">Dual multi-room system configuration</p>
+                    <div class="mt-4 mb-6">
+                        <span class="text-3xl font-extrabold text-white">400 ৳</span>
+                        <span class="text-slate-500 text-xs">/ 3 months</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li><i class="fa-solid fa-circle-check text-purple-500 mr-2"></i> 8,000+ Channels + VOD</li>
+                        <li><i class="fa-solid fa-circle-check text-purple-500 mr-2"></i> FHD/4K Resolution streams</li>
+                        <li><i class="fa-solid fa-circle-check text-purple-500 mr-2"></i> 2 Connections Active</li>
+                    </ul>
+                </div>
+                <button onclick="selectPackage('Standard 3 Months', 400)" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-xl mt-8 shadow-lg shadow-purple-600/30 transition">Select Package</button>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 relative flex flex-col justify-between hover:border-slate-700 transition">
+                <div>
+                    <h3 class="text-lg font-bold text-slate-300">Premium 12 Months</h3>
+                    <p class="text-xs text-slate-500 mt-1">Extreme value wholesale option</p>
+                    <div class="mt-4 mb-6">
+                        <span class="text-3xl font-extrabold text-white">1200 ৳</span>
+                        <span class="text-slate-500 text-xs">/ year</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li><i class="fa-solid fa-circle-check text-purple-500 mr-2"></i> Complete Unrestricted Access</li>
+                        <li><i class="fa-solid fa-circle-check text-purple-500 mr-2"></i> Ultra Premium Servers</li>
+                        <li><i class="fa-solid fa-circle-check text-purple-500 mr-2"></i> 4 Connections Active</li>
+                    </ul>
+                </div>
+                <button onclick="selectPackage('Premium 12 Months', 1200)" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3 rounded-xl mt-8 transition">Select Package</button>
+            </div>
+        </div>
+
+        <div id="checkout-container" class="hidden max-w-xl mx-auto bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-xl">
+            <h2 class="text-xl font-bold text-white mb-2">Secure Payment Checkout</h2>
+            <p class="text-sm text-slate-400 mb-6">Selected Plan: <span id="selected-plan-name" class="text-purple-400 font-semibold">None</span> (<span id="selected-plan-price" class="text-white font-bold">0</span> BDT)</p>
+            
+            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Choose Native Gateway Integration</label>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <button onclick="setGateway('bkash')" id="gt-bkash" class="border border-slate-800 bg-slate-950 p-4 rounded-xl flex flex-col items-center gap-2 hover:border-pink-500 transition">
+                    <span class="w-12 h-6 bg-pink-600 rounded flex items-center justify-center font-black text-xs text-white tracking-tighter">bKash</span>
+                    <span class="text-xs font-medium">Pay via bKash</span>
+                </button>
+                <button onclick="setGateway('nagad')" id="gt-nagad" class="border border-slate-800 bg-slate-950 p-4 rounded-xl flex flex-col items-center gap-2 hover:border-orange-500 transition">
+                    <span class="w-12 h-6 bg-orange-600 rounded flex items-center justify-center font-black text-xs text-white tracking-tighter">Nagad</span>
+                    <span class="text-xs font-medium">Pay via Nagad</span>
+                </button>
+            </div>
+
+            <div class="space-y-4">
+                <input type="text" placeholder="Enter Account Number (017XXXXXXXX)" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 text-white">
+                <button onclick="alert('Transaction processing securely via gateway node API.')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 rounded-xl transition">Complete Safe Purchase</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function selectPackage(name, price) {
+            document.getElementById('selected-plan-name').innerText = name;
+            document.getElementById('selected-plan-price').innerText = price;
+            const container = document.getElementById('checkout-container');
+            container.classList.remove('hidden');
+            container.scrollIntoView({ behavior: 'smooth' });
+        }
+        function setGateway(type) {
+            document.getElementById('gt-bkash').className = "border border-slate-800 bg-slate-950 p-4 rounded-xl flex flex-col items-center gap-2 hover:border-pink-500 transition";
+            document.getElementById('gt-nagad').className = "border border-slate-800 bg-slate-950 p-4 rounded-xl flex flex-col items-center gap-2 hover:border-orange-500 transition";
+            
+            if(type === 'bkash') {
+                document.getElementById('gt-bkash').className = "border-2 border-pink-500 bg-pink-950/20 p-4 rounded-xl flex flex-col items-center gap-2 transition";
+            } else if (type === 'nagad') {
+                document.getElementById('gt-nagad').className = "border-2 border-orange-500 bg-orange-950/20 p-4 rounded-xl flex flex-col items-center gap-2 transition";
+            }
+        }
+    </script>
+</body>
+</html>
