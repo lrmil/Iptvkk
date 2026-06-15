@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamNet IPTV - Watch Live TV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans">
+
+    <div class="bg-slate-900 border-b border-slate-800 p-2 text-center text-xs text-slate-400">
+        <div id="monetag-top-zone">Sponsored Advertisement Zone (ID: 847291)</div>
+    </div>
+
+    <nav class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <i class="fa-solid fa-tv text-purple-500 text-2xl"></i>
+            <span class="text-xl font-bold tracking-wider text-white">StreamNet<span class="text-purple-500">IPTV</span></span>
+        </div>
+        
+        <div id="guest-nav" class="flex items-center space-x-4">
+            <a href="subscription.html" class="text-slate-300 hover:text-white transition">Packages</a>
+            <button onclick="toggleModal('login-modal')" class="text-slate-300 hover:text-white font-medium">Sign In</button>
+            <button onclick="toggleModal('register-modal')" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-medium transition shadow-lg shadow-purple-600/20">Sign Up</button>
+        </div>
+
+        <div id="auth-nav" class="hidden flex items-center space-x-6">
+            <a href="#live-tv" class="text-purple-400 font-medium flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-red-500 animate-pulse"></span> Live TV</a>
+            <a href="subscription.html" class="text-slate-300 hover:text-white transition">My Subscription</a>
+            
+            <div class="relative group">
+                <button class="flex items-center space-x-2 bg-slate-800 p-2 rounded-full border border-slate-700 focus:outline-none">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80" alt="Avatar" class="w-8 h-8 rounded-full">
+                    <span class="text-sm font-medium pr-2">Rahat Khan</span>
+                    <i class="fa-solid fa-chevron-down text-xs text-slate-400"></i>
+                </button>
+                <div class="absolute right-0 mt-2 w-48 bg-slate-900 border border-slate-800 rounded-xl shadow-xl py-2 hidden group-hover:block">
+                    <div class="px-4 py-2 border-b border-slate-800">
+                        <p class="text-xs text-slate-400">Status</p>
+                        <p class="text-sm font-semibold text-emerald-400">Premium Active</p>
+                    </div>
+                    <a href="#" class="block px-4 py-2 text-sm hover:bg-slate-800 transition">My Profile</a>
+                    <a href="admin.html" class="block px-4 py-2 text-sm text-amber-400 hover:bg-slate-800 transition">Admin Panel</a>
+                    <a href="reseller.html" class="block px-4 py-2 text-sm text-blue-400 hover:bg-slate-800 transition">Reseller Panel</a>
+                    <hr class="border-slate-800 my-1">
+                    <button onclick="simulateLogout()" class="w-full text-left px-4 py-2 text-sm text-red-400 hover:bg-slate-800 transition">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header id="landing-hero" class="container mx-auto px-6 py-20 text-center max-w-4xl">
+        <span class="bg-purple-900/40 text-purple-400 border border-purple-800 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest">Premium Streaming Service</span>
+        <h1 class="text-5xl md:text-6xl font-extrabold mt-6 leading-tight text-white">8,000+ Live Channels & VOD Directly to Your Screen</h1>
+        <p class="text-slate-400 text-lg mt-6 max-w-2xl mx-auto">Experience buffer-free entertainment. Register now to unlock sports, movies, local and international broadcast television instantly.</p>
+        <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+            <button onclick="toggleModal('register-modal')" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-4 rounded-xl shadow-xl shadow-purple-600/20 transition transform hover:-translate-y-0.5">Get Your Account Now</button>
+            <a href="subscription.html" class="bg-slate-900 hover:bg-slate-800 text-white font-semibold px-8 py-4 rounded-xl border border-slate-800 transition transform hover:-translate-y-0.5">View Pricing Packages</a>
+        </div>
+    </header>
+
+    <main id="iptv-dashboard" class="hidden container mx-auto px-4 py-6 grid grid-cols-12 gap-6">
+        <aside class="col-span-12 lg:col-span-3 bg-slate-900 border border-slate-800 rounded-2xl p-4 h-[calc(100vh-180px)] overflow-y-auto">
+            <h3 class="font-bold text-slate-300 mb-4 px-2 tracking-wide uppercase text-xs">Categories</h3>
+            <div class="space-y-1">
+                <button class="w-full text-left bg-purple-600 text-white px-4 py-3 rounded-xl font-medium flex items-center justify-between"><span class="flex items-center gap-3"><i class="fa-solid fa-star"></i> Bangladeshi Live TV</span> <span class="bg-purple-800 px-2 py-0.5 rounded text-xs">42</span></button>
+                <button class="w-full text-left text-slate-400 hover:bg-slate-800 hover:text-white px-4 py-3 rounded-xl font-medium flex items-center justify-between transition"><span class="flex items-center gap-3"><i class="fa-solid fa-trophy"></i> Sports Premium</span> <span class="bg-slate-800 px-2 py-0.5 rounded text-xs">118</span></button>
+                <button class="w-full text-left text-slate-400 hover:bg-slate-800 hover:text-white px-4 py-3 rounded-xl font-medium flex items-center justify-between transition"><span class="flex items-center gap-3"><i class="fa-solid fa-clapperboard"></i> Movies & Cinema</span> <span class="bg-slate-800 px-2 py-0.5 rounded text-xs">95</span></button>
+                <button class="w-full text-left text-slate-400 hover:bg-slate-800 hover:text-white px-4 py-3 rounded-xl font-medium flex items-center justify-between transition"><span class="flex items-center gap-3"><i class="fa-solid fa-mask"></i> Kids Entertainment</span> <span class="bg-slate-800 px-2 py-0.5 rounded text-xs">24</span></button>
+            </div>
+        </aside>
+
+        <section class="col-span-12 lg:col-span-9 space-y-6">
+            <div class="bg-black aspect-video rounded-2xl overflow-hidden relative border border-slate-800 group shadow-2xl">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute inset-0 flex flex-col justify-center items-center bg-slate-950/90 text-center p-6">
+                    <i class="fa-solid fa-circle-play text-purple-500 text-7xl animate-pulse cursor-pointer hover:text-purple-400 transition"></i>
+                    <p class="text-xl font-bold mt-4">Somoy TV Live HD</p>
+                    <p class="text-sm text-slate-400 mt-1">Resolution: 1085p • Bitrate: 4500kbps • Source: Premium m3u8</p>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-bold text-white mb-4">Channels in Bangladeshi Live TV</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    <div onclick="alert('Streaming Selected Channel...')" class="bg-slate-900 border border-slate-800 rounded-xl p-3 hover:border-purple-500 transition cursor-pointer text-center group">
+                        <div class="bg-slate-950 rounded-lg p-4 mb-2 flex justify-center items-center h-20 border border-slate-800 group-hover:bg-slate-900 transition">
+                            <span class="text-xl font-black text-slate-600 tracking-tighter">SOMOY <span class="text-red-500">TV</span></span>
+                        </div>
+                        <p class="text-sm font-semibold truncate text-slate-200">Somoy TV HD</p>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 hover:border-purple-500 transition cursor-pointer text-center group">
+                        <div class="bg-slate-950 rounded-lg p-4 mb-2 flex justify-center items-center h-20 border border-slate-800 group-hover:bg-slate-900 transition">
+                            <span class="text-xl font-black text-slate-600 tracking-tighter text-blue-500">JAMUNA TV</span>
+                        </div>
+                        <p class="text-sm font-semibold truncate text-slate-200">Jamuna TV Live</p>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 hover:border-purple-500 transition cursor-pointer text-center group">
+                        <div class="bg-slate-950 rounded-lg p-4 mb-2 flex justify-center items-center h-20 border border-slate-800 group-hover:bg-slate-900 transition">
+                            <span class="text-xl font-black text-slate-600 tracking-tighter text-emerald-500">T-SPORTS</span>
+                        </div>
+                        <p class="text-sm font-semibold truncate text-slate-200">T-Sports Live HD</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="register-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl w-full max-w-md relative mx-4">
+            <button onclick="toggleModal('register-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+            <h2 class="text-2xl font-bold text-white mb-2">Create an Account</h2>
+            <p class="text-slate-400 text-sm mb-6">Register now to instantly watch live streaming.</p>
+            <form onsubmit="simulateLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Full Name</label>
+                    <input type="text" required placeholder="John Doe" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Email Address</label>
+                    <input type="email" required placeholder="name@domain.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Password</label>
+                    <input type="password" required placeholder="••••••••" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition">
+                </div>
+                <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-xl shadow-lg shadow-purple-600/20 transition mt-2">Sign Up & Open Player</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="login-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl w-full max-w-md relative mx-4">
+            <button onclick="toggleModal('login-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+            <h2 class="text-2xl font-bold text-white mb-2">Welcome Back</h2>
+            <p class="text-slate-400 text-sm mb-6">Enter details to access your iptv stream network.</p>
+            <form onsubmit="simulateLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Email Address</label>
+                    <input type="email" required placeholder="name@domain.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Password</label>
+                    <input type="password" required placeholder="••••••••" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition">
+                </div>
+                <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-xl shadow-lg shadow-purple-600/20 transition mt-2">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="fixed bottom-0 left-0 right-0 bg-slate-900/90 backdrop-blur border-t border-slate-800 p-3 z-40 text-center">
+        <div class="text-xs text-slate-500 mb-1">Advertisement</div>
+        <div id="monetag-banner-zone" class="text-purple-400 font-mono font-semibold text-sm">Monetag Native Banner Displaying Here [Zone: 948201]</div>
+    </footer>
+
+    <script>
+        function toggleModal(id) {
+            const el = document.getElementById(id);
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+                setTimeout(() => el.classList.remove('opacity-0'), 10);
+            } else {
+                el.classList.add('opacity-0');
+                setTimeout(() => el.classList.add('hidden'), 300);
+            }
+        }
+        function simulateLogin(e) {
+            if(e) e.preventDefault();
+            document.getElementById('register-modal').classList.add('hidden');
+            document.getElementById('login-modal').classList.add('hidden');
+            document.getElementById('landing-hero').classList.add('hidden');
+            
+            document.getElementById('guest-nav').classList.add('hidden');
+            document.getElementById('auth-nav').classList.remove('hidden');
+            document.getElementById('iptv-dashboard').classList.remove('hidden');
+        }
+        function simulateLogout() {
+            document.getElementById('landing-hero').classList.remove('hidden');
+            document.getElementById('guest-nav').classList.remove('hidden');
+            document.getElementById('auth-nav').classList.add('hidden');
+            document.getElementById('iptv-dashboard').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
