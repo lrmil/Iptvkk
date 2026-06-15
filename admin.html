@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Controls Admin - StreamNet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans flex min-h-screen">
+
+    <aside class="w-64 bg-slate-900 border-r border-slate-800 flex flex-col justify-between hidden md:flex">
+        <div class="p-6">
+            <div class="flex items-center space-x-3 mb-8">
+                <i class="fa-solid fa-screwdriver-wrench text-amber-500 text-xl"></i>
+                <span class="text-lg font-bold text-white tracking-wide">Root<span class="text-amber-500">Admin</span></span>
+            </div>
+            <nav class="space-y-1">
+                <a href="#" class="bg-slate-800 text-white flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium"><i class="fa-solid fa-chart-pie text-amber-500"></i> Dashboard</a>
+                <a href="#" class="text-slate-400 hover:bg-slate-800 hover:text-white flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition"><i class="fa-solid fa-users"></i> Manage Users</a>
+                <a href="#" class="text-slate-400 hover:bg-slate-800 hover:text-white flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition"><i class="fa-solid fa-rectangle-ad"></i> Ads Settings</a>
+                <a href="#" class="text-slate-400 hover:bg-slate-800 hover:text-white flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition"><i class="fa-solid fa-box"></i> Package Options</a>
+                <a href="#" class="text-slate-400 hover:bg-slate-800 hover:text-white flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition"><i class="fa-solid fa-wallet"></i> Reseller Profiles</a>
+            </nav>
+        </div>
+        <div class="p-4 border-t border-slate-800">
+            <a href="index.html" class="flex items-center gap-2 text-xs text-slate-400 hover:text-white transition"><i class="fa-solid fa-arrow-right-from-bracket"></i> Exit to Main App</a>
+        </div>
+    </aside>
+
+    <main class="flex-grow p-6 md:p-10 space-y-8 overflow-y-auto max-w-7xl mx-auto w-full">
+        <header class="flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-black text-white">System Operations Center</h1>
+                <p class="text-sm text-slate-400">Manage infrastructure arrays, monetizations and agent operations.</p>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm text-slate-300">
+                Server Load: <span class="text-emerald-400 font-mono font-bold">24% Stable</span>
+            </div>
+        </header>
+
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+                <div class="flex justify-between items-start text-slate-400"><span class="text-xs font-semibold uppercase tracking-wider">Gross Gross Income</span><i class="fa-solid fa-dollar-sign text-emerald-500"></i></div>
+                <div class="text-2xl font-bold text-white mt-2">142,900 ৳</div>
+                <div class="text-xs text-emerald-400 font-medium mt-1"><i class="fa-solid fa-arrow-trend-up"></i> +12% this week</div>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+                <div class="flex justify-between items-start text-slate-400"><span class="text-xs font-semibold uppercase tracking-wider">Active Customers</span><i class="fa-solid fa-user-check text-blue-500"></i></div>
+                <div class="text-2xl font-bold text-white mt-2">1,240 Users</div>
+                <div class="text-xs text-blue-400 font-medium mt-1">84 active streaming now</div>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+                <div class="flex justify-between items-start text-slate-400"><span class="text-xs font-semibold uppercase tracking-wider">Reseller Networks</span><i class="fa-solid fa-handshake text-purple-500"></i></div>
+                <div class="text-2xl font-bold text-white mt-2">38 Agents</div>
+                <div class="text-xs text-purple-400 font-medium mt-1">Active distribution network</div>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+                <div class="flex justify-between items-start text-slate-400"><span class="text-xs font-semibold uppercase tracking-wider">M3U8 Stream Hooks</span><i class="fa-solid fa-link text-amber-500"></i></div>
+                <div class="text-2xl font-bold text-white mt-2">8,241 Targets</div>
+                <div class="text-xs text-amber-400 font-medium mt-1">0 broken streams detected</div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
+                <h3 class="text-base font-bold text-white flex items-center gap-2"><i class="fa-solid fa-rectangle-ad text-amber-500"></i> Ads Setting (Monetag Integration)</h3>
+                <p class="text-xs text-slate-400">Instantly swap script zone injection IDs down to the main channel dashboard arrays.</p>
+                <div class="space-y-3">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-400 mb-1">Global Native Banner Zone ID</label>
+                        <input type="text" value="948201" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-200 font-mono focus:outline-none focus:border-amber-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-400 mb-1">Top Sticky Banner Zone ID</label>
+                        <input type="text" value="847291" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-200 font-mono focus:outline-none focus:border-amber-500">
+                    </div>
+                    <button onclick="alert('Monetag configuration tags updated successfully.')" class="bg-amber-600 hover:bg-amber-700 text-slate-950 font-bold px-4 py-2 rounded-xl text-xs transition">Update Zone Deployments</button>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
+                <h3 class="text-base font-bold text-white flex items-center gap-2"><i class="fa-solid fa-money-check-dollar text-emerald-500"></i> Gateway & Reseller Settings</h3>
+                <p class="text-xs text-slate-400">Switch target routing APIs for consumer checkout systems globally.</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-400 mb-1">Primary Gateway Router</label>
+                        <select class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
+                            <option>bKash Merchant REST API</option>
+                            <option>Nagad Fast Checkout Node</option>
+                            <option>Dual Channel Failover Mode</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-400 mb-1">Reseller Commission (%)</label>
+                        <input type="number" value="15" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-200 font-mono focus:outline-none focus:border-emerald-500">
+                    </div>
+                </div>
+                <button onclick="alert('Gateway architecture parameters modified.')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition">Save Financial Framework</button>
+            </div>
+        </section>
+
+        <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-base font-bold text-white">Full Control User Profile Directory</h3>
+                <input type="text" placeholder="Filter profiles by token/identity..." class="bg-slate-950 border border-slate-800 rounded-xl px-4 py-2 text-xs text-slate-200 focus:outline-none focus:border-purple-500 w-64">
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm text-slate-400">
+                    <thead class="text-xs uppercase bg-slate-950 text-slate-400 border-b border-slate-800 font-mono">
+                        <tr>
+                            <th class="px-6 py-4">User Details</th>
+                            <th class="px-6 py-4">Assigned Plan</th>
+                            <th class="px-6 py-4">Linked Proxy/Agent</th>
+                            <th class="px-6 py-4">Line Status</th>
+                            <th class="px-6 py-4 text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800">
+                        <tr class="hover:bg-slate-800/40 transition">
+                            <td class="px-6 py-4 font-medium text-white flex items-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=60&q=80" class="w-8 h-8 rounded-full">
+                                <div><div>Rahat Khan</div><span class="text-xs text-slate-500">rahat@example.com</span></div>
+                            </td>
+                            <td class="px-6 py-4 text-xs"><span class="bg-purple-900/60 text-purple-300 border border-purple-800 px-2 py-0.5 rounded">Standard 3M</span></td>
+                            <td class="px-6 py-4 text-xs font-mono text-slate-500">Direct Signup</td>
+                            <td class="px-6 py-4 text-xs"><span class="text-emerald-400 flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Online</span></td>
+                            <td class="px-6 py-4 text-right space-x-2">
+                                <button onclick="alert('Editing User Profile Configuration Override Matrix')" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 px-2.5 py-1 rounded transition">Edit</button>
+                                <button onclick="alert('User connection pool severed.')" class="text-xs bg-red-950 hover:bg-red-900 text-red-400 px-2.5 py-1 rounded transition">Kill Line</button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40 transition">
+                            <td class="px-6 py-4 font-medium text-white flex items-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=60&q=80" class="w-8 h-8 rounded-full">
+                                <div><div>Imran Ahmed</div><span class="text-xs text-slate-500">imran.dhaka@net.com</span></div>
+                            </td>
+                            <td class="px-6 py-4 text-xs"><span class="bg-slate-800 text-slate-400 border border-slate-700 px-2 py-0.5 rounded">Basic 1M</span></td>
+                            <td class="px-6 py-4 text-xs font-mono text-blue-400">Reseller_DH10</td>
+                            <td class="px-6 py-4 text-xs"><span class="text-slate-500 flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-slate-600"></span>Idle</span></td>
+                            <td class="px-6 py-4 text-right space-x-2">
+                                <button class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 px-2.5 py-1 rounded transition">Edit</button>
+                                <button class="text-xs bg-red-950 hover:bg-red-900 text-red-400 px-2.5 py-1 rounded transition">Kill Line</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
